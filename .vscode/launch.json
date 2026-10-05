@@ -1,0 +1,54 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Smoke flow (quick)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/torchFileTest.py",
+      "cwd": "${workspaceFolder}",
+      "args": ["--steps", "2", "--no-3d-plane", "--out-dir", "${workspaceFolder}/work/smoke"],
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "Coanda flow (quick)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/coandaFlowTest.py",
+      "cwd": "${workspaceFolder}",
+      "args": ["--warmup-steps", "0", "--record-steps", "4", "--no-3d", "--out-dir", "${workspaceFolder}/work/coanda"],
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "Backward-facing step (quick)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/readable_backward_facing_step_solver-3.py",
+      "cwd": "${workspaceFolder}",
+      "args": ["--steps", "50", "--pressure-iterations", "20", "--output", "${workspaceFolder}/work/bfs_quick.png", "--report", "${workspaceFolder}/work/bfs_quick_report.json"],
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "Backward-facing step (full validation)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/readable_backward_facing_step_solver-3.py",
+      "cwd": "${workspaceFolder}",
+      "args": ["--output", "${workspaceFolder}/bfs_velocity_pressure.png", "--report", "${workspaceFolder}/bfs_validation_report.json"],
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "Helicopter pitch portrait (aggressive damping)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/helicopter_pitch_phase_portrait_aggressive_damping.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    }
+  ]
+}
