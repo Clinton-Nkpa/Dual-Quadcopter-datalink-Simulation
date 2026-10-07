@@ -58,6 +58,17 @@ streamlit run telemetry_dashboard.py
 
 Choose **Demo** to preview the dashboard without a vehicle. For live telemetry, choose **MAVLink**, then connect to a UDP listener such as `udpin:0.0.0.0:14550`, or enter a serial device such as `/dev/ttyUSB0` and select the matching baud rate. Forward the autopilot's MAVLink stream to the selected UDP port when using UDP. The dashboard displays heartbeat/link state, flight mode and armed state, battery, relative altitude, speed, attitude, GPS, status text, and recent altitude/speed trends. It is telemetry-only and does not send flight commands.
 
+
+## Verification and constraints
+
+- The telemetry dashboard passed Python 3.12 syntax compilation and a Streamlit AppTest demo render using Streamlit 1.65.0 and PyMAVLink 2.4.50. The demo rendered all eight metrics without app errors.
+- The live UDP path was exercised at `udpin:0.0.0.0:14550` using a generated MAVLink quadrotor heartbeat. The UI rendered the vehicle as armed and online. This verifies UDP reception, heartbeat parsing, and link/flight-state display; it does not verify real sensor values, serial transport, or flight behavior.
+- No physical aircraft or serial telemetry device was attached during that check. For real telemetry, configure the autopilot or SITL to forward MAVLink to UDP port 14550, or connect a serial device such as `/dev/ttyUSB0` and select its baud rate. Linux serial access may require membership in the `dialout` group.
+- The user’s earlier Linux terminal output showed the smoke and Coanda scripts running on a GTX 1650 with PyTorch CUDA. This audit host did not have the CFD packages or GPU runtime, so those runs were not repeated here. Install the project dependencies and use the official PyTorch selector for the installed driver when setting up another machine.
+- Missing dashboard packages were handled by installing `requirements-telemetry.txt` into a temporary virtual environment; the demo and synthetic UDP checks then passed. The temporary environment is outside the repository.
+
+No failing dashboard path was found in these checks. Keep the unverified hardware and serial cases as constraints until they are tested with the actual aircraft; do not treat them as completed flight validation.
+
 ## Reconstructed behavior
 
 - `torchFileTest.py`: 3D semi-Lagrangian advection, pressure projection, vorticity confinement, and density/velocity visualizations.
