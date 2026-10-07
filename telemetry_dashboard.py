@@ -6,9 +6,9 @@ Run with:
 The dashboard can use generated demo data or listen to a MAVLink UDP/serial
 connection. It displays telemetry only; it does not send flight commands.
 
-Verification note: demo mode and live UDP heartbeat parsing have been exercised
-with Streamlit AppTest. Those checks cover UI rendering and link status, not
-physical sensor accuracy, serial hardware, or flight behavior.
+Verification note: demo mode and synthetic UDP and pseudo-serial heartbeat
+parsing have been exercised with Streamlit AppTest. These checks cover UI
+rendering and link status, not physical sensor accuracy or flight behavior.
 """
 
 from __future__ import annotations

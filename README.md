@@ -62,10 +62,11 @@ Choose **Demo** to preview the dashboard without a vehicle. For live telemetry, 
 ## Verification and constraints
 
 - The telemetry dashboard passed Python 3.12 syntax compilation and a Streamlit AppTest demo render using Streamlit 1.65.0 and PyMAVLink 2.4.50. The demo rendered all eight metrics without app errors.
-- The live UDP path was exercised at `udpin:0.0.0.0:14550` using a generated MAVLink quadrotor heartbeat. The UI rendered the vehicle as armed and online. This verifies UDP reception, heartbeat parsing, and link/flight-state display; it does not verify real sensor values, serial transport, or flight behavior.
+- The live UDP path was exercised at `udpin:0.0.0.0:14550` using a generated MAVLink quadrotor heartbeat. The UI rendered the vehicle as armed and online. This verifies UDP reception, heartbeat parsing, and link/flight-state display; it does not verify real sensor values or flight behavior.
+- The serial path initially failed because PySerial was missing (`ModuleNotFoundError: No module named 'serial'`). Added `pyserial>=3.5` to `requirements-telemetry.txt`, then verified serial parsing through a pseudo-terminal with a generated armed heartbeat. This tests serial byte handling, not a physical USB/UART radio, its permissions, or real vehicle data.
 - No physical aircraft or serial telemetry device was attached during that check. For real telemetry, configure the autopilot or SITL to forward MAVLink to UDP port 14550, or connect a serial device such as `/dev/ttyUSB0` and select its baud rate. Linux serial access may require membership in the `dialout` group.
 - The user’s earlier Linux terminal output showed the smoke and Coanda scripts running on a GTX 1650 with PyTorch CUDA. This audit host did not have the CFD packages or GPU runtime, so those runs were not repeated here. Install the project dependencies and use the official PyTorch selector for the installed driver when setting up another machine.
-- Missing dashboard packages were handled by installing `requirements-telemetry.txt` into a temporary virtual environment; the demo and synthetic UDP checks then passed. The temporary environment is outside the repository.
+- Missing dashboard packages were handled by installing `requirements-telemetry.txt` into a temporary virtual environment; the demo, synthetic UDP, and pseudo-serial checks then passed. The temporary environment is outside the repository.
 
 No failing dashboard path was found in these checks. Keep the unverified hardware and serial cases as constraints until they are tested with the actual aircraft; do not treat them as completed flight validation.
 
