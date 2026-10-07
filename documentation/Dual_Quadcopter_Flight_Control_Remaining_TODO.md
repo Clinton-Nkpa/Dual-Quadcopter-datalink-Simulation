@@ -718,13 +718,5 @@ CURRENT STATE
 49. [ ] Cooperative perception.
 
 # Engineering objective
+This concludes the Dual Quadcopter FLight Control Project development Cycle
 
-The project has moved from:
-
-> **“Can I build a flight controller?”**
-
-toward:
-
-> **“Can I demonstrate, quantitatively and reproducibly, the conditions under which my flight controller works, degrades, and must declare a fault?”**
-
-The next milestone is therefore **qualification of what already exists**, rather than adding more features.
