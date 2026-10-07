@@ -76,4 +76,4 @@ No failing dashboard path was found in these checks. Keep the unverified hardwar
 - `coandaFlowTest.py`: 3D jet injection over a curved surface, near-wall attachment and alignment forces, pressure projection, tracer visualization, and animations.
 - `readable_backward_facing_step_solver-3.py`: 2D explicit predictor and pressure-Poisson projection with a step obstacle, plotting, and JSON validation diagnostics.
 
-These are educational visualization experiments. They are not a calibrated physical model or a benchmark-quality CFD solver, and they do not establish a validated flight-stability controller. The first-person development report in `docs/Linux_Quadrotor_Flight_Control_Development_Report.docx` summarizes the CUDA runs, constraints, and simulation-to-hardware roadmap.
+These are educational visualization experiments. They are not a calibrated physical model or a benchmark-quality CFD solver, and they do not establish a validated flight-stability controller. The development report in `docs/Linux_Quadrotor_Flight_Control_Development_Report.docx` summarizes the CUDA runs, constraints, and simulation-to-hardware roadmap.
