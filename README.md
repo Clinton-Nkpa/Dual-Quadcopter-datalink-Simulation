@@ -45,6 +45,19 @@ The solver produces a render and `bfs_validation_report.json`. Add `--no-vscode`
 
 The optional CUDA notebook is `cuda_smoke_test.ipynb`. It reports device availability and performs a small tensor operation; it is a runtime check, not part of the flow models.
 
+## Telemetry monitor
+
+A read-only Streamlit dashboard can show generated demo values or live MAVLink telemetry from a vehicle/SITL connection.
+
+Install its optional dependencies and launch it:
+
+```bash
+python -m pip install -r requirements-telemetry.txt
+streamlit run telemetry_dashboard.py
+```
+
+Choose **Demo** to preview the dashboard without a vehicle. For live telemetry, choose **MAVLink**, then connect to a UDP listener such as `udpin:0.0.0.0:14550`, or enter a serial device such as `/dev/ttyUSB0` and select the matching baud rate. Forward the autopilot's MAVLink stream to the selected UDP port when using UDP. The dashboard displays heartbeat/link state, flight mode and armed state, battery, relative altitude, speed, attitude, GPS, status text, and recent altitude/speed trends. It is telemetry-only and does not send flight commands.
+
 ## Reconstructed behavior
 
 - `torchFileTest.py`: 3D semi-Lagrangian advection, pressure projection, vorticity confinement, and density/velocity visualizations.

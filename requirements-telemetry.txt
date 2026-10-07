@@ -1,0 +1,2 @@
+streamlit>=1.37
+pymavlink>=2.4.41
