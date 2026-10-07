@@ -9,7 +9,7 @@ import numpy as np
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-from rotor_pitch_axis_state_space import PitchModelConfig, rk4_step, state_matrices
+from analysis.rotor_pitch_axis_state_space import PitchModelConfig, rk4_step, state_matrices
 
 
 OUT_DIR = Path(__file__).resolve().parent
@@ -266,5 +266,3 @@ def main(open_vscode: bool = True):
 if __name__ == "__main__":
     args = parse_args()
     main(open_vscode=not args.no_vscode)
-    
-    

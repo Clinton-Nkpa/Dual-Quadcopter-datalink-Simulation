@@ -14,3 +14,27 @@ coanda_telemetry.json
 helicopter_pitch_phase_portrait_aggressive_damping.png
 bfs_velocity_pressure.png
 bfs_validation_report.json
+
+# Local-only controller and hardware implementation. Never publish these paths.
+/private/
+/firmware/
+/hardware/
+
+# Local verification artifacts for the private controller/hardware implementation.
+/verification/
+/tools/
+/outputs/
+
+# Simulation output files may be generated beside their source scripts.
+**/smoke.gif
+**/smoke_3d_plane.gif
+**/smoke_slice.png
+**/smoke_slice.pt
+**/smoke_telemetry.json
+**/coanda_side.gif
+**/coanda_curved_surface.gif
+**/coanda_mid_slice.png
+**/coanda_telemetry.json
+**/bfs_velocity_pressure.png
+**/bfs_validation_report.json
+**/helicopter_pitch_phase_portrait_aggressive_damping.png
