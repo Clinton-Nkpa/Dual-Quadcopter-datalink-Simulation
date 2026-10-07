@@ -717,6 +717,6 @@ CURRENT STATE
 48. [ ] Relative visual localisation.
 49. [ ] Cooperative perception.
 
-# Engineering objective
+# End of Engineering objective
 This concludes the Dual Quadcopter FLight Control Project development Cycle
 
