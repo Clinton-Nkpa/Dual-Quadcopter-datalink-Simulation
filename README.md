@@ -104,4 +104,4 @@ Choose **Demo** to preview synthetic values. For live MAVLink telemetry, choose 
 - [Remaining qualification TODO](documentation/Dual_Quadcopter_Flight_Control_Remaining_TODO.md)
 - [Public/private file classification](documentation/FILE_CLASSIFICATION.md)
 
-The nonlinear model and fault hooks have software-level execution checks, but quantitative robustness limits have not yet been established. The project still needs evidence-based plant parameters, a defined robustness envelope, estimator qualification, and later hardware-specific timing, peripheral, props-off, HIL, and flight validation. H743 hardware operation and flight performance are not demonstrated by this public code.
+The nonlinear model and fault hooks have software-level execution checks, but quantitative robustness limits have not yet been established.Evidence-based plant parameters still needed, along with a defined robustness envelope, estimator qualification, and later hardware-specific timing, peripheral, props-off, HIL, and flight validation. H743 hardware operation and flight performance are not demonstrated by this public code.
